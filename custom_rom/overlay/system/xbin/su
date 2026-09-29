@@ -1,0 +1,48 @@
+#!/system/bin/sh
+# OrchDroid Native Root Client
+
+ROOT_ENABLED=$(getprop debug.orch_root)
+if [ "$ROOT_ENABLED" != "1" ]; then
+    echo "su: not found" >&2
+    exit 127
+fi
+
+PORT=48888
+HOST="127.0.0.1"
+
+if [ "$1" = "-v" ] || [ "$1" = "-V" ]; then
+    echo "26.4:MAGISKSU"
+    exit 0
+fi
+
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+    echo "OrchDroid Native SU v1.0"
+    echo "Usage: su [options] [-c command]"
+    exit 0
+fi
+
+if [ "$1" = "-c" ]; then
+    shift
+    printf "%s\nexit\n" "$*" | toybox nc $HOST $PORT
+    exit $?
+fi
+
+if [ "$#" -gt 0 ]; then
+    if [ "$1" = "0" ] || [ "$1" = "root" ]; then
+        shift
+        if [ "$1" = "-c" ]; then
+            shift
+            printf "%s\nexit\n" "$*" | toybox nc $HOST $PORT
+            exit $?
+        fi
+        if [ "$#" -gt 0 ]; then
+            printf "%s\nexit\n" "$*" | toybox nc $HOST $PORT
+            exit $?
+        fi
+    else
+        printf "%s\nexit\n" "$*" | toybox nc $HOST $PORT
+        exit $?
+    fi
+fi
+
+exec toybox nc -t $HOST $PORT

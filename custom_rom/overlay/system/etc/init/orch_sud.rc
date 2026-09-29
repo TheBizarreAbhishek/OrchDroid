@@ -1,0 +1,12 @@
+service orch_sud /system/bin/toybox nc -s 127.0.0.1 -p 48888 -L /system/bin/sh
+    class main
+    user root
+    group root
+    seclabel u:r:su:s0
+    disabled
+
+on property:debug.orch_root=1
+    start orch_sud
+
+on property:debug.orch_root=0
+    stop orch_sud

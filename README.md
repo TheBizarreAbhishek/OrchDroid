@@ -129,19 +129,21 @@ This compiles:
 - `dist/OrchDroid Device.app` (Swift / Cocoa ARM64 Mach-O)
 - `dist/liborchdroid_ui.dylib` (Objective-C ARC + Metal + CoreImage + QuartzCore)
 
-### 2. Cooking the Custom Gaming ROM
-To debloat system partitions and inject the native isolated root daemon:
+### 2. Building & Cooking the Custom Gaming ROM
+OrchDroid maintains a tracked **Source Tree Overlay** (`custom_rom/overlay/`) containing all system binaries, init services, build properties, and SELinux policies in plain source form.
+
+To build and compile the Custom ROM:
 
 ```bash
-# 1. Unpack dynamic partitions from the base image
-python3 custom_rom/unpack_super.py
-
-# 2. Debloat system & product images and patch build properties
-python3 custom_rom/patch_custom_rom.py
-
-# 3. Repack partitions into images/cooked/system.img
-python3 custom_rom/repack_super.py
+# Apply source tree overlay & repack super partition image
+python3 custom_rom/apply_overlay.py
 ```
+
+This single command:
+1. Debloats background telemetry apps according to `overlay/debloat_manifest.json`.
+2. Injects the native root daemon (`orch_sud.rc`), root clients (`/system/bin/su`, `/system/xbin/su`), and gaming build properties (`build.prop`).
+3. Injects the optimized permissive `precompiled_sepolicy` with native SELinux labels.
+4. Flashes and repacks `images/cooked/system.img`.
 
 ---
 

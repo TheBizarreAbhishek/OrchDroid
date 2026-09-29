@@ -1,0 +1,18 @@
+{
+  "description": "OrchDroid Custom ROM Debloat Manifest - Bloatware apps stripped from stock image",
+  "product_removed": [
+    "app/YouTube",
+    "app/YouTubeMusicPrebuilt",
+    "app/Maps",
+    "app/Drive",
+    "app/Photos",
+    "app/PrebuiltGmail",
+    "app/CalendarGooglePrebuilt",
+    "app/NexusWallpapersStubPrebuilt2018",
+    "priv-app/WellbeingPrebuilt",
+    "priv-app/Velvet",
+    "priv-app/AndroidAutoStubPrebuilt",
+    "priv-app/GoogleDialer",
+    "priv-app/PrebuiltBugle"
+  ]
+}
