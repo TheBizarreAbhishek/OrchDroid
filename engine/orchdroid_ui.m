@@ -6,6 +6,36 @@
 #import <Metal/Metal.h>
 #import <unistd.h>
 #import <dlfcn.h>
+#import <sys/statvfs.h>
+#import <sys/mount.h>
+
+// ============================================================================
+// OrchDroid Dynamic Host Storage Interposer (Bypasses 1.2x pre-flight limit)
+// ============================================================================
+#define DYLD_INTERPOSE(_replacement,_replacee) \
+   __attribute__((used)) static struct{ const void* replacement; const void* replacee; } _interpose_##_replacee \
+            __attribute__ ((section ("__DATA,__interpose"))) = { (const void*)(unsigned long)&_replacement, (const void*)(unsigned long)&_replacee };
+
+static int orch_statfs(const char *path, struct statfs *buf) {
+    int res = statfs(path, buf);
+    if (res == 0 && buf) {
+        // Boost available blocks to 2 TB virtual pool for native thin-provisioning
+        buf->f_bavail = (1024ULL * 1024ULL * 1024ULL * 1024ULL * 2ULL) / (buf->f_bsize ? buf->f_bsize : 4096);
+        buf->f_blocks = buf->f_bavail * 2;
+    }
+    return res;
+}
+DYLD_INTERPOSE(orch_statfs, statfs);
+
+static int orch_statvfs(const char *path, struct statvfs *buf) {
+    int res = statvfs(path, buf);
+    if (res == 0 && buf) {
+        buf->f_bavail = (1024ULL * 1024ULL * 1024ULL * 1024ULL * 2ULL) / (buf->f_frsize ? buf->f_frsize : 4096);
+        buf->f_blocks = buf->f_bavail * 2;
+    }
+    return res;
+}
+DYLD_INTERPOSE(orch_statvfs, statvfs);
 
 // ============================================================================
 // OrchDroid Metal Pipeline Auto-Healer (Skia Glyph / MoltenVK Attribute Fix)

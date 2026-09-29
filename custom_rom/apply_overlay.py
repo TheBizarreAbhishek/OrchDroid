@@ -51,6 +51,9 @@ def apply_overlay_to_partition(part_name, overlay_subpath, xattr_context):
 
     print(f"[*] Applying overlay from {source_dir.name} to {part_name}...")
     
+    # In system-as-root, system.img contains files under /system/
+    prefix = "system/" if part_name == "system.img" else ""
+
     # Create temporary xattr file with null terminator
     xattr_tmp = Path("/tmp/xattr_selinux_tmp")
     with open(xattr_tmp, "wb") as f:
@@ -62,7 +65,7 @@ def apply_overlay_to_partition(part_name, overlay_subpath, xattr_context):
         
         # Ensure directories exist in ext4
         for d in dirs:
-            dir_target = (rel_root / d).as_posix()
+            dir_target = prefix + (rel_root / d).as_posix()
             run_cmd(f"{DEBUGFS} -w -R 'mkdir {dir_target}' {part_img}")
             run_cmd(f"{DEBUGFS} -w -R 'set_inode_field {dir_target} mode 040755' {part_img}")
             run_cmd(f"{DEBUGFS} -w -R 'set_inode_field {dir_target} uid 0' {part_img}")
@@ -71,7 +74,7 @@ def apply_overlay_to_partition(part_name, overlay_subpath, xattr_context):
 
         for file in files:
             src_file = Path(root) / file
-            dest_internal = (rel_root / file).as_posix()
+            dest_internal = prefix + (rel_root / file).as_posix()
             mode = "0100755" if (file == "su" or file.endswith(".sh")) else "0100644"
             
             # Copy file

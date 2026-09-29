@@ -79,6 +79,9 @@ echo "========================================================="
     setprop debug.sf.early.sf.duration "" 2>/dev/null || true
     setprop debug.sf.earlyGl.app.duration "" 2>/dev/null || true
     setprop debug.sf.earlyGl.sf.duration "" 2>/dev/null || true
+
+    # OrchDroid Dynamic Host Storage Auto-Expansion
+    /system/bin/resize2fs /dev/block/mapper/userdata 2>/dev/null || /system/bin/resize2fs /dev/block/by-name/userdata 2>/dev/null || true
   "
 
   # Inject dynamic model and GPU props into runtime
