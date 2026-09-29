@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrchDroid Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="macos-theme">
+
+  <!-- ================= MAIN MANAGER WINDOW ================= -->
+  <div class="window-container" id="managerWindow">
+    <div class="window-header">
+      <!-- Spacer for Native macOS Traffic Lights (Red, Yellow, Green) -->
+      <div class="traffic-lights-spacer" id="trafficLightsSpacer"></div>
+      
+      <div class="window-title">
+        <span>OrchDroid Pro</span>
+      </div>
+      
+      <div class="header-actions">
+        <button class="icon-btn" id="btnUserAccount" title="Account">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </button>
+        <div class="dropdown-wrapper">
+          <button class="icon-btn" id="btnNewInstance" title="New Instance">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <div class="dropdown-menu" id="newInstanceMenu">
+            <div class="menu-item" data-type="tablet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Tablet (Landscape)
+            </div>
+            <div class="menu-item" data-type="phone">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              Phone (Portrait)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manager Body / Instances List -->
+    <div class="window-body">
+      <div class="instances-container" id="instancesList">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal Dialog -->
+  <div class="confirm-dialog-backdrop" id="deleteConfirmDialog">
+    <div class="confirm-dialog-box">
+      <div class="confirm-dialog-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          <line x1="10" y1="11" x2="10" y2="17"></line>
+          <line x1="14" y1="11" x2="14" y2="17"></line>
+        </svg>
+      </div>
+      <div class="confirm-dialog-title">Delete Instance?</div>
+      <div class="confirm-dialog-desc" id="deleteConfirmText">Are you sure you want to delete this device? This will remove all associated VM files and configurations.</div>
+      <div class="confirm-dialog-actions">
+        <button class="btn-dialog-cancel" id="btnCancelDelete">Cancel</button>
+        <button class="btn-dialog-delete" id="btnConfirmDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toastMessage"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

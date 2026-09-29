@@ -1,0 +1,37 @@
+# ==============================================================================
+# OrchDroid Git Ignore
+# ==============================================================================
+
+# OS & Workspace Files
+.DS_Store
+*.lock
+*.log
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Android Emulator SDK & Binaries (Fetch via sdkmanager / OrchDroid bootstrap)
+bin/
+sdk/
+
+# Virtual Machine Disks, Instances & Images
+images/
+instances/
+custom_rom/partitions/
+custom_rom/adbd_patch/
+custom_rom/ramdisk/
+custom_rom/*.img
+
+# Build Outputs & Heavy Game Assets
+apps/*.app
+dist/*.app
+dist/*.dylib
+dist/bgmi_transfer/
+dist/*.png
+dist/*.zip
+
+# Xcode / Swift Intermediate Builds
+.build/
+*.o

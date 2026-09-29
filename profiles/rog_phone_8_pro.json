@@ -1,0 +1,40 @@
+{
+  "profile_name": "ASUS ROG Phone 8 Pro",
+  "android_version": "14",
+  "api_level": 34,
+  "specs": {
+    "brand": "asus",
+    "manufacturer": "asus",
+    "model": "ASUS_AI2401",
+    "device": "ASUS_AI2401",
+    "product": "WW_AI2401",
+    "board": "pineapple",
+    "platform": "pineapple",
+    "hardware": "qcom",
+    "soc_manufacturer": "Qualcomm",
+    "soc_model": "SM8650",
+    "fingerprint": "asus/WW_AI2401/ASUS_AI2401:14/UKQ1.230924.001/34.1420.1420.428:user/release-keys",
+    "build_id": "UKQ1.230924.001",
+    "build_type": "user",
+    "build_tags": "release-keys",
+    "flavor": "WW_AI2401-user",
+    "display_id": "UKQ1.230924.001.34.1420.1420.428",
+    "security_patch": "2024-06-01",
+    "default_resolution": "2448x1080",
+    "density": 480,
+    "refresh_rate": 165
+  },
+  "gpu_spoof": {
+    "vendor": "Qualcomm",
+    "renderer": "Adreno (TM) 750",
+    "gl_version": "OpenGL ES 3.2 V@0615.0 (GIT@8735df7)",
+    "vulkan_driver_version": "512.615.0"
+  },
+  "stealth_flags": {
+    "mask_qemu_props": true,
+    "mask_proc_cmdline": true,
+    "hide_emulator_pipes": true,
+    "fake_battery_status": true,
+    "fake_telephony": true
+  }
+}

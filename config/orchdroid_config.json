@@ -1,0 +1,76 @@
+{
+  "active_profile": "tab_s9_ultra",
+  "profiles": {
+    "tab_s9_ultra": {
+      "name": "Samsung Galaxy Tab S9 Ultra (120 FPS Gaming)",
+      "brand": "samsung",
+      "model": "SM-X910",
+      "product": "gts9u",
+      "manufacturer": "samsung",
+      "fingerprint": "samsung/gts9ux/gts9u:14/UP1A.231005.007/X910XXU1BWL1:user/release-keys",
+      "soc": "Snapdragon 8 Gen 2",
+      "gpu": {
+        "vendor": "Qualcomm",
+        "renderer": "Adreno (TM) 740",
+        "version": "OpenGL ES 3.2 V@0615.0"
+      }
+    },
+    "s24_ultra": {
+      "name": "Samsung Galaxy S24 Ultra (Flagship Phone)",
+      "brand": "samsung",
+      "model": "SM-S9280",
+      "product": "e3q",
+      "manufacturer": "samsung",
+      "fingerprint": "samsung/e3qzh/e3q:14/UP1A.231005.007/S9280ZCU1AXC1:user/release-keys",
+      "soc": "Snapdragon 8 Gen 3",
+      "gpu": {
+        "vendor": "Qualcomm",
+        "renderer": "Adreno (TM) 750",
+        "version": "OpenGL ES 3.2 V@0674.0"
+      }
+    },
+    "rog_phone_8": {
+      "name": "ASUS ROG Phone 8 Pro (Esports Mode)",
+      "brand": "asus",
+      "model": "ASUS_AI2401",
+      "product": "ASUS_AI2401",
+      "manufacturer": "asus",
+      "fingerprint": "asus/WW_AI2401/ASUS_AI2401:14/UKQ1.230917.001/34.1420.1420.316:user/release-keys",
+      "soc": "Snapdragon 8 Gen 3",
+      "gpu": {
+        "vendor": "Qualcomm",
+        "renderer": "Adreno (TM) 750",
+        "version": "OpenGL ES 3.2 V@0674.0"
+      }
+    }
+  },
+  "performance": {
+    "auto_detect_apple_silicon": true,
+    "cpu_cores": 4,
+    "memory_mb": 12288,
+    "disable_zram": true,
+    "high_fps_mode": 120,
+    "resolution": {
+      "width": 2304,
+      "height": 1440,
+      "dpi": 360
+    }
+  },
+  "keymapping": {
+    "enabled": true,
+    "profile_path": "/Volumes/LinuxFS/OrchDroid/config/keymaps/bgmi_battle_royale.json",
+    "shooting_mode_toggle_key": "F1",
+    "mouse_aim_sensitivity_x": 1.2,
+    "mouse_aim_sensitivity_y": 1.2
+  },
+  "anti_detection": {
+    "mask_qemu_props": true,
+    "mask_ranchu_drivers": true,
+    "fake_battery": true,
+    "mock_sensors": true
+  },
+  "root_permission": {
+    "enabled": true,
+    "description": "OrchDroid Root Switch: OFF keeps device 100% certified & anti-cheat safe. ON enables isolated native su daemon for root apps."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "profile_name": "Samsung Galaxy S24 Ultra",
+  "android_version": "14",
+  "api_level": 34,
+  "specs": {
+    "brand": "Samsung",
+    "manufacturer": "samsung",
+    "model": "SM-S928B",
+    "device": "e3q",
+    "product": "e3qxeea",
+    "board": "qcom",
+    "platform": "pineapple",
+    "hardware": "qcom",
+    "soc_manufacturer": "Qualcomm",
+    "soc_model": "SM8650",
+    "fingerprint": "samsung/e3qxeea/e3q:14/UP1A.231005.007/S928BXXU1AXCA:user/release-keys",
+    "build_id": "UP1A.231005.007",
+    "build_type": "user",
+    "build_tags": "release-keys",
+    "flavor": "e3qxeea-user",
+    "display_id": "UP1A.231005.007.S928BXXU1AXCA",
+    "security_patch": "2024-04-01",
+    "default_resolution": "3120x1440",
+    "density": 505,
+    "refresh_rate": 120
+  },
+  "gpu_spoof": {
+    "vendor": "Qualcomm",
+    "renderer": "Adreno (TM) 750",
+    "gl_version": "OpenGL ES 3.2 V@0615.0 (GIT@8735df7)",
+    "vulkan_driver_version": "512.615.0"
+  },
+  "stealth_flags": {
+    "mask_qemu_props": true,
+    "mask_proc_cmdline": true,
+    "hide_emulator_pipes": true,
+    "fake_battery_status": true,
+    "fake_telephony": true
+  }
+}

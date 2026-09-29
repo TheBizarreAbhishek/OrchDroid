@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"Android Device" - Device</title>
+  <link rel="stylesheet" href="settings.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="settings-body">
+
+  <div class="settings-container">
+    <!-- Top Navigation Tabs (OrchDroid Native Style: Icon on top, Text below) -->
+    <div class="tabs-header">
+      <div class="tabs-list">
+        <button class="tab-item active" data-tab="device" data-title="Device Profile">
+          <div class="tab-icon-wrap">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <span>Device</span>
+        </button>
+
+        <button class="tab-item" data-tab="display" data-title="Display & Metal">
+          <div class="tab-icon-wrap">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <span>Display</span>
+        </button>
+
+        <button class="tab-item" data-tab="performance" data-title="Performance (HVF)">
+          <div class="tab-icon-wrap">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+              <rect x="9" y="9" width="6" height="6"></rect>
+              <line x1="9" y1="1" x2="9" y2="4"></line>
+              <line x1="15" y1="1" x2="15" y2="4"></line>
+              <line x1="9" y1="20" x2="9" y2="23"></line>
+              <line x1="15" y1="20" x2="15" y2="23"></line>
+              <line x1="20" y1="9" x2="23" y2="9"></line>
+              <line x1="20" y1="14" x2="23" y2="14"></line>
+              <line x1="1" y1="9" x2="4" y2="9"></line>
+              <line x1="1" y1="14" x2="4" y2="14"></line>
+            </svg>
+          </div>
+          <span>Performance</span>
+        </button>
+
+        <button class="tab-item" data-tab="data" data-title="Storage & Disk">
+          <div class="tab-icon-wrap">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="12" x2="2" y2="12"></line>
+              <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+              <line x1="6" y1="16" x2="6.01" y2="16"></line>
+              <line x1="10" y1="16" x2="10.01" y2="16"></line>
+            </svg>
+          </div>
+          <span>Storage</span>
+        </button>
+
+        <button class="tab-item" data-tab="global" data-title="Security & TEE">
+          <div class="tab-icon-wrap">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <span>Security & TEE</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Panes Content -->
+    <div class="tabs-content">
+      
+      <!-- 1. DEVICE TAB -->
+      <div class="tab-pane active" id="pane-device">
+        <div class="form-row">
+          <label class="form-label">Device Name:</label>
+          <input type="text" class="form-input" id="cfgDeviceName" value="Android Device">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Device Model:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="modelType" value="preset" id="radioPreset">
+              <span>Preset</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="modelType" value="custom" id="radioCustom" checked>
+              <span>Custom</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Inset Sub-box for Brand / Name / Model -->
+        <div class="form-subbox">
+          <div class="sub-row">
+            <label class="sub-label">Brand:</label>
+            <input type="text" class="form-input sub-input" id="cfgBrand" value="Samsung">
+          </div>
+          <div class="sub-row">
+            <label class="sub-label">Name:</label>
+            <input type="text" class="form-input sub-input" id="cfgModelName" value="Galaxy S23 Ultra">
+          </div>
+          <div class="sub-row">
+            <label class="sub-label">Model:</label>
+            <input type="text" class="form-input sub-input" id="cfgMiit" value="SM-X910">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">IMEI:</label>
+          <div class="input-with-action">
+            <input type="text" class="form-input" id="cfgIMEI" value="868425047112024">
+            <button class="inline-action-btn" id="btnRandomIMEI" title="Generate New Valid IMEI">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Phone Number:</label>
+          <input type="text" class="form-input" id="cfgPhoneNumber" placeholder="Please enter a phone number">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Root Access:</label>
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="cfgRootAccess" checked>
+              <span>Enable</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">GPU Model:</label>
+          <div class="gpu-control-wrap">
+            <div class="gpu-inputs-row">
+              <select class="form-select gpu-select" id="cfgGpuPreset">
+                <option value="custom" selected>Custom</option>
+                <option value="adreno_750">Adreno (TM) 750</option>
+                <option value="adreno_740">Adreno (TM) 740</option>
+                <option value="adreno_720">Adreno (TM) 720</option>
+                <option value="mali_g720">Mali-G720-Immortalis</option>
+              </select>
+              <input type="text" class="form-input gpu-name-input" id="cfgGpuCustomName" value="Adreno (TM) 720">
+            </div>
+            <div class="form-hint">
+              The GPU model may affect the selectable image quality, frame rate levels, and default options in the game.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. DISPLAY TAB -->
+      <div class="tab-pane" id="pane-display">
+        <div class="form-row">
+          <label class="form-label">Display Size:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="displaySize" value="tablet">
+              <span>Tablet</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="displaySize" value="phone">
+              <span>Phone</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="displaySize" value="custom" checked>
+              <span>Custom</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Resolution:</label>
+          <div class="res-inputs-row">
+            <input type="number" class="form-input res-input" id="cfgWidth" value="2304">
+            <span class="cross-sep">×</span>
+            <input type="number" class="form-input res-input" id="cfgHeight" value="1440">
+            <span class="unit-text">px</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">DPI Density:</label>
+          <div class="res-inputs-row">
+            <input type="number" class="form-input res-input" id="cfgDPI" value="360">
+            <span class="unit-text">DPI</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Frame Rate:</label>
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="cfgFpsCounter" checked>
+              <span>Display live FPS overlay during gameplay</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Graphics Engine:</label>
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="cfgGfxEnhance" checked>
+              <span>Ultra HDR Graphics Enhancement (Metal 3 Shader Pipeline)</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PERFORMANCE TAB -->
+      <div class="tab-pane" id="pane-performance">
+        <div class="form-row">
+          <label class="form-label">CPU Cores:</label>
+          <select class="form-select" id="cfgCpuCores">
+            <option value="2">2 Cores (Low)</option>
+            <option value="4" selected>4 Cores (Recommended)</option>
+            <option value="6">6 Cores (High)</option>
+            <option value="8">8 Cores (Ultra Gaming)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Memory (RAM):</label>
+          <select class="form-select" id="cfgRamMB">
+            <option value="4096">4 GB</option>
+            <option value="8192">8 GB</option>
+            <option value="12288" selected>12 GB (Ultra 120 FPS BGMI)</option>
+            <option value="16384">16 GB</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Max Frame Rate:</label>
+          <select class="form-select" id="cfgMaxFps">
+            <option value="60">60 FPS</option>
+            <option value="90">90 FPS</option>
+            <option value="120" selected>120 FPS (Flagship)</option>
+            <option value="144">144 FPS (ProMotion)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Virtualization:</label>
+          <div class="spec-status-text">
+            Apple Silicon Hypervisor.framework (HVF) Active
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. DATA TAB -->
+      <div class="tab-pane" id="pane-data">
+        <div class="form-row">
+          <label class="form-label">Disk Occupied:</label>
+          <div class="disk-info-wrap">
+            <span class="disk-size" id="diskOccupiedLabel">9.21 GB</span>
+            <button class="btn-clean" id="btnCleanDisk">Clean Disk Space</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Storage Path:</label>
+          <div class="storage-path-box" id="deviceStoragePath">
+            /Volumes/LinuxFS/OrchDroid/instances/default
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. GLOBAL TAB -->
+      <div class="tab-pane" id="pane-global">
+        <div class="form-row">
+          <label class="form-label">ADB Debugging:</label>
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="cfgDefaultAdb" checked>
+              <span>Enable Default ADB Port (5555)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Play Integrity:</label>
+          <div class="checkbox-container">
+            <label class="checkbox-label">
+              <input type="checkbox" id="cfgPlayIntegrity" checked>
+              <span>Enable PlayIntegrityFix Certified Fingerprint</span>
+            </label>
+            <label class="checkbox-label mt-6">
+              <input type="checkbox" id="cfgTrickyStore" checked>
+              <span>Hardware Keybox Simulator (Tricky Store)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">Integrity Status:</label>
+          <div class="badges-row">
+            <span class="badge pass">MEETS_BASIC: PASS</span>
+            <span class="badge pass">MEETS_DEVICE: PASS</span>
+            <span class="badge pass">MEETS_STRONG: PASS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Small subtle auto-saved toast -->
+    <div class="save-status" id="saveStatus">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Saved
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

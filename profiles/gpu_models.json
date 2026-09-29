@@ -1,0 +1,42 @@
+[
+  {
+    "id": "adreno_750",
+    "name": "Adreno (TM) 750",
+    "vendor": "Qualcomm",
+    "gl_version": "OpenGL ES 3.2 V@0615.0 (GIT@8735df7)",
+    "vulkan_version": "512.615.0",
+    "recommended_games": "BGMI, COD Warzone, Genshin Impact (120 FPS / Ultra HDR)"
+  },
+  {
+    "id": "adreno_720",
+    "name": "Adreno (TM) 720",
+    "vendor": "Qualcomm",
+    "gl_version": "OpenGL ES 3.2 V@0510.0",
+    "vulkan_version": "512.510.0",
+    "recommended_games": "PUBG Mobile, Free Fire (90 FPS Stable)"
+  },
+  {
+    "id": "adreno_740",
+    "name": "Adreno (TM) 740",
+    "vendor": "Qualcomm",
+    "gl_version": "OpenGL ES 3.2 V@0530.0",
+    "vulkan_version": "512.530.0",
+    "recommended_games": "Honkai Star Rail, Arena Breakout"
+  },
+  {
+    "id": "mali_g715",
+    "name": "Mali-G715-Immortalis MC11",
+    "vendor": "ARM",
+    "gl_version": "OpenGL ES 3.2 v1.r38p0-01eac0",
+    "vulkan_version": "38.0.0",
+    "recommended_games": "MediaTek Dimensity 9200+ Flagship Titles"
+  },
+  {
+    "id": "mali_g720",
+    "name": "Mali-G720-Immortalis MC12",
+    "vendor": "ARM",
+    "gl_version": "OpenGL ES 3.2 v1.r44p0-00eac0",
+    "vulkan_version": "44.0.0",
+    "recommended_games": "Dimensity 9300 Ray-Tracing Mobile Games"
+  }
+]

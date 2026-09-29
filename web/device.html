@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Device - OrchDroid</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .device-window {
+      position: static !important;
+      inset: auto !important;
+      display: flex !important;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body class="macos-theme">
+
+  <!-- ================= ANDROID EMULATOR DEVICE WINDOW ================= -->
+  <div class="device-window" id="deviceWindow">
+    <div class="device-header">
+      <div class="traffic-lights">
+        <span class="light red" id="btnCloseDevice" title="Quit Device"></span>
+        <span class="light yellow" id="btnMinimizeDevice"></span>
+        <span class="light green" id="btnFullscreenDevice"></span>
+      </div>
+      <div class="device-title" id="deviceWindowTitle">Android Device</div>
+      <div class="device-toolbar">
+        <button class="tool-btn" id="btnToggleKeymap" title="Keymapping Overlay (K)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="8" y1="16" x2="16" y2="16"></line></svg>
+        </button>
+        <button class="tool-btn" id="btnRotateDevice" title="Rotate Screen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+        </button>
+        <button class="tool-btn" id="btnVolDown" title="Volume Down">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="15.54" y1="8.46" x2="20.46" y2="13.38"></line></svg>
+        </button>
+        <button class="tool-btn" id="btnVolUp" title="Volume Up">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+        <button class="tool-btn" id="btnInstallApk" title="Install APK / XAPK">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Android Viewport -->
+    <div class="android-viewport">
+      <div class="android-statusbar">
+        <div class="status-left">
+          <span class="status-clock" id="statusClock">10:44</span>
+          <span class="status-fps-pill" id="liveFpsHud">120 FPS</span>
+        </div>
+        <div class="status-right">
+          <span class="status-icon" title="Wi-Fi Connected">📶</span>
+          <span class="status-icon" title="Battery 85% Discharging">🔋 85%</span>
+          <span class="status-icon notification-dot">2</span>
+        </div>
+      </div>
+
+      <div class="android-desktop">
+        <div class="desktop-apps">
+          <div class="app-icon" id="appPlayStore">
+            <div class="icon-shape playstore">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <path d="M4.5 3.5L15.5 12L4.5 20.5V3.5Z" fill="#34A853"/>
+                <path d="M15.5 12L19 14.2L5.8 21.8L15.5 12Z" fill="#EA4335"/>
+                <path d="M15.5 12L5.8 2.2L19 9.8L15.5 12Z" fill="#FBBC04"/>
+                <path d="M19 9.8L21.5 11.2C22.2 11.6 22.2 12.4 21.5 12.8L19 14.2L16.8 12L19 9.8Z" fill="#4285F4"/>
+              </svg>
+            </div>
+            <div class="app-label">Play Store</div>
+          </div>
+
+          <div class="app-icon" id="appBgmi">
+            <div class="icon-shape bgmi">
+              <div class="bgmi-avatar">PUBG</div>
+              <div class="bgmi-badge">120 FPS</div>
+            </div>
+            <div class="app-label">Battlegrounds India</div>
+          </div>
+
+          <div class="app-icon" id="appGenshin">
+            <div class="icon-shape genshin">
+              <div class="genshin-avatar">GENSHIN</div>
+            </div>
+            <div class="app-label">Genshin Impact</div>
+          </div>
+        </div>
+
+        <div class="desktop-watermark">
+          <div class="watermark-symbol">
+            <span class="w-letter">M</span>
+            <span class="w-dot"></span>
+          </div>
+        </div>
+
+        <div class="android-dock">
+          <div class="dock-app" title="Settings"><div class="dock-icon">⚙️</div></div>
+          <div class="dock-app" title="Gallery"><div class="dock-icon">🖼️</div></div>
+          <div class="dock-app" title="Files"><div class="dock-icon">📁</div></div>
+          <div class="dock-app" title="Browser"><div class="dock-icon">🌐</div></div>
+        </div>
+      </div>
+
+      <!-- KEYMAPPING HUD OVERLAY -->
+      <div class="keymap-overlay" id="keymapOverlay">
+        <div class="keymap-badge">⌨️ GAMER KEYMAP ACTIVE (M2 Metal Direct Input: 0.2ms)</div>
+        
+        <div class="keymap-element wasd-pad" style="left: 14%; bottom: 18%;">
+          <div class="key-cap key-w">W</div>
+          <div class="key-cap key-a">A</div>
+          <div class="key-cap key-s">S</div>
+          <div class="key-cap key-d">D</div>
+          <div class="pad-label">Movement</div>
+        </div>
+
+        <div class="keymap-element crosshair-aim" style="right: 32%; top: 44%;">
+          <div class="aim-reticle">✛</div>
+          <div class="key-cap-mini">Right Click (Lock)</div>
+        </div>
+
+        <div class="keymap-element fire-button" style="right: 18%; bottom: 22%;">
+          <div class="key-cap fire-cap">L-Click</div>
+          <div class="pad-label">Fire / Shoot</div>
+        </div>
+
+        <div class="keymap-element action-caps" style="right: 8%; bottom: 18%;">
+          <div class="key-cap">Space (Jump)</div>
+          <div class="key-cap">C (Crouch)</div>
+          <div class="key-cap">Z (Prone)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toastMessage"></div>
+
+  <script>
+    const btnToggleKeymap = document.getElementById("btnToggleKeymap");
+    const keymapOverlay = document.getElementById("keymapOverlay");
+    const toastMessage = document.getElementById("toastMessage");
+
+    function showToast(msg) {
+      toastMessage.textContent = msg;
+      toastMessage.classList.add("show");
+      setTimeout(() => toastMessage.classList.remove("show"), 2500);
+    }
+
+    btnToggleKeymap.addEventListener("click", () => {
+      keymapOverlay.classList.toggle("active");
+      showToast(keymapOverlay.classList.contains("active") ? "Keymap Active (Press K)" : "Keymap Hidden");
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "k" || e.key === "K") {
+        keymapOverlay.classList.toggle("active");
+      }
+    });
+
+    document.getElementById("appBgmi").addEventListener("click", () => {
+      showToast("Launching Battlegrounds Mobile India @ 120 FPS...");
+    });
+    document.getElementById("appPlayStore").addEventListener("click", () => {
+      showToast("Opening Google Play Store...");
+    });
+    document.getElementById("appGenshin").addEventListener("click", () => {
+      showToast("Launching Genshin Impact...");
+    });
+
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("statusClock").textContent =
+        `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
